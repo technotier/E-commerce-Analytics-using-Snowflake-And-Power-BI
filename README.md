@@ -1,98 +1,142 @@
 # 🛒 E-commerce Analytics with PostgreSQL and Power BI
-# 📌 Project Overview
 
-End-to-end e-commerce analytics data model built using Snowflake
+📌 Project Overview
 
-Designed using star schema for scalable reporting and ad-hoc analysis
+End-to-end e-commerce analytics solution built using PostgreSQL as the analytical data warehouse and Power BI for visualization and business reporting.
 
-Transforms raw transactional data into analytics-ready dimension and fact tables
+Designed using a star schema to support scalable reporting, performant joins, and ad-hoc analytical queries.
 
-# 🗂️ Schema Architecture
-## 🔹 Raw Schema (raw_schema)
+Transforms raw transactional data into analytics-ready dimension and fact tables, enabling robust business intelligence and time-series analysis.
 
-customers – customer master data
+🗂️ Schema Architecture
+🔹 Raw Schema (raw_schema)
 
-category – product category reference
+Stores source-aligned transactional data with minimal transformation.
 
-products – product master data
+customers – customer master and demographic data
+
+category – product category reference data
+
+products – product master data including pricing and inventory
 
 orders – customer order headers
 
 order_items – order-level line items
 
-# 🔹 Analytics Schema (analytics_schema)
-## 📐 Dimension Tables
+🔹 Analytics Schema (analytics_schema)
 
+Optimized for reporting, aggregation, and BI consumption.
+
+📐 Dimension Tables
 dim_customers
 
-Customer profile and demographics
+Customer profile and demographic attributes:
 
-Age, age group, customer tenure, loyalty segmentation
+Age and age group derivations
+
+Customer tenure and lifecycle stage
+
+Loyalty and repeat-purchase segmentation
 
 dim_products
 
-Combined product and category data
+Denormalized product and category dimension:
 
-Sale price, cost price, profit, margin percentage
+Product and category attributes
 
-Stock status and price segmentation
+Sale price, cost price, profit per unit
+
+Margin percentage calculations
+
+Stock status and price tier segmentation
 
 dim_date
 
-Calendar attributes (year, month, quarter, weekday)
+Centralized calendar dimension supporting time-series analysis:
 
-Weekend/weekday flags, seasonality, holidays
+Date, year, quarter, month, week, and weekday
 
-# 📊 Fact Table
+Weekend vs. weekday flags
 
-## fact_sales
+Seasonality indicators
 
-Grain: one row per order item per order per day
+Holiday flags (configurable)
 
-Built from orders, order items, and product dimensions
+📊 Fact Table
+fact_sales
 
-Metrics:
+Grain: One row per order item per order per day
 
-Gross amount, net amount, discounts
+Derived from:
 
-Cost, profit, order size classification
+orders
 
-# ⭐ Key Features
+order_items
 
-Star schema–based data modeling
+dim_products
 
-Production-ready Snowflake SQL
+dim_customers
 
-Data cleansing and type standardization
+dim_date
+
+Key metrics:
+
+Gross sales amount
+
+Net sales amount
+
+Discount value
+
+Cost and profit
+
+Margin analysis
+
+Order size classification (small / medium / large)
+
+⭐ Key Features
+
+Star schema–based analytical data model
+
+Production-ready PostgreSQL SQL
+
+Data cleansing and standardization logic
 
 Business-driven feature engineering
 
-Date-key based time-series analysis
+Surrogate keys and date-key-based analysis
 
-Optimized for ad-hoc analytical queries
+Optimized for Power BI ingestion and performance
 
-# 📈 Analytics Use Cases
+Supports incremental refresh and slicing across dimensions
 
-Sales and revenue trend analysis
+📈 Analytics Use Cases
 
-Product and category performance
+Sales, revenue, and growth trend analysis
 
-Customer purchasing behavior
+Product and category performance evaluation
 
-Discount impact analysis
+Customer purchasing behavior and cohort analysis
 
-Profitability and margin analysis
+Discount effectiveness and pricing impact analysis
 
-# 🛠️ Technology Stack
+Profitability and margin reporting
 
-Snowflake
+Executive-level KPI dashboards in Power BI
 
-SQL
+🛠️ Technology Stack
 
-# 📌 Purpose
+PostgreSQL (Data Warehouse & Analytics Layer)
 
-Demonstrates real-world analytics engineering concepts
+SQL (Transformations and Feature Engineering)
 
-Suitable for data analyst and analytics engineer portfolios
+Power BI (Data Modeling, DAX, Dashboards & Reporting)
 
-Designed for interview-ready business analysis scenarios
+📌 Purpose
+
+Demonstrates real-world analytics engineering and BI modeling concepts
+
+Suitable for data analyst, BI developer, and analytics engineer portfolios
+
+Designed for interview-ready business and technical discussions
+
+Showcases end-to-end pipeline from raw data to executive dashboards
