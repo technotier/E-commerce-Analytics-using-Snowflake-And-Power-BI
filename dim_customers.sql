@@ -65,5 +65,3 @@ end as customer_tenure_bucket,
 current_timestamp as loaded_at
 from 
 customers_cte;
-
-select * from analytics_schema.dim_custome
