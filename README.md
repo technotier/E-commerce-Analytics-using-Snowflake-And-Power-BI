@@ -1,6 +1,6 @@
 # 🛒 E-commerce Analytics with PostgreSQL and Power BI
 
-📌 Project Overview
+# 📌 Project Overview
 
 End-to-end e-commerce analytics solution built using PostgreSQL as the analytical data warehouse and Power BI for visualization and business reporting.
 
@@ -8,8 +8,8 @@ Designed using a star schema to support scalable reporting, performant joins, an
 
 Transforms raw transactional data into analytics-ready dimension and fact tables, enabling robust business intelligence and time-series analysis.
 
-🗂️ Schema Architecture
-🔹 Raw Schema (raw_schema)
+# 🗂️ Schema Architecture
+# 🔹 Raw Schema (raw_schema)
 
 Stores source-aligned transactional data with minimal transformation.
 
@@ -23,12 +23,12 @@ orders – customer order headers
 
 order_items – order-level line items
 
-🔹 Analytics Schema (analytics_schema)
+# 🔹 Analytics Schema (analytics_schema)
 
 Optimized for reporting, aggregation, and BI consumption.
 
-📐 Dimension Tables
-dim_customers
+# 📐 Dimension Tables
+## dim_customers
 
 Customer profile and demographic attributes:
 
@@ -38,7 +38,7 @@ Customer tenure and lifecycle stage
 
 Loyalty and repeat-purchase segmentation
 
-dim_products
+## dim_products
 
 Denormalized product and category dimension:
 
@@ -50,7 +50,7 @@ Margin percentage calculations
 
 Stock status and price tier segmentation
 
-dim_date
+## dim_date
 
 Centralized calendar dimension supporting time-series analysis:
 
@@ -62,8 +62,8 @@ Seasonality indicators
 
 Holiday flags (configurable)
 
-📊 Fact Table
-fact_sales
+# 📊 Fact Table
+## fact_sales
 
 Grain: One row per order item per order per day
 
@@ -93,7 +93,7 @@ Margin analysis
 
 Order size classification (small / medium / large)
 
-⭐ Key Features
+# ⭐ Key Features
 
 Star schema–based analytical data model
 
@@ -109,7 +109,44 @@ Optimized for Power BI ingestion and performance
 
 Supports incremental refresh and slicing across dimensions
 
-📈 Analytics Use Cases
+# Key Business Insights
+## 🔹 Overview & Revenue Intelligence
+
+Month-wise Total Sales, Previous Month Sales, MoM Change & MoM %
+
+Net Sales by Order Size (Single, Small, Bulk orders)
+
+Net Sales by Margin Category to assess revenue quality
+
+City-wise Gross Sales, Net Sales, Net Profit & Profit % for regional performance analysis
+
+👉 Helps leadership track growth momentum, profitability, and geographic concentration risk.
+
+## 🔹 Product Performance Analysis
+
+Product-wise COGS, Net Sales, Net Profit & Profit %
+
+Top 5 Products by Net Sales and by Profit (not always the same)
+
+Price Segment vs Net Sales (Luxury, Premium, Economy performance)
+
+Top 5 Category Revenue Share % to understand category dependency
+
+👉 Enables pricing optimization, assortment strategy, and margin protection decisions.
+
+## 🔹 Customer Performance & Engagement
+
+Customer-wise Total Orders, AOV, Purchase Quantity & CLTV
+
+Customer Price Segment Affinity with AOV and Total Spend
+
+Distinct Products Purchased & Engagement Level (Single vs Multi-product buyers)
+
+Net Sales by Age Group for targeted marketing insights
+
+👉 Highlights high-value customers, cross-sell opportunities, and retention focus areas.
+
+# 📈 Analytics Use Cases
 
 Sales, revenue, and growth trend analysis
 
@@ -123,7 +160,7 @@ Profitability and margin reporting
 
 Executive-level KPI dashboards in Power BI
 
-🛠️ Technology Stack
+# 🛠️ Technology Stack
 
 PostgreSQL (Data Warehouse & Analytics Layer)
 
@@ -131,7 +168,7 @@ SQL (Transformations and Feature Engineering)
 
 Power BI (Data Modeling, DAX, Dashboards & Reporting)
 
-📌 Purpose
+# 📌 Purpose
 
 Demonstrates real-world analytics engineering and BI modeling concepts
 
